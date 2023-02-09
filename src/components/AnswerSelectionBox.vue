@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { ref } from 'vue';
-import { useQuizStore } from '../stores/useQuizStore';
 const emit = defineEmits(["solved"]);
 const props = defineProps({
   id: { type: Number, required: true },

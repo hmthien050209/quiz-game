@@ -12,13 +12,11 @@ onMounted(() => {
     <div class="p-16 h-screen w-screen relative">
         <h1 class="text-7xl font-medium font-[Oswald]">Luật chơi</h1>
         <ul class="pt-8 text-4xl leading-relaxed list-disc pl-8">
-            <li>Sẽ có 5 câu hỏi cho các bạn lựa chọn</li>
-            <li>Nhiệm vụ của các bạn là trả lời các câu hỏi này để tìm mật mã giúp bạn Lê Minh nhớ lại nơi mà chúng
-                mình
-                sẽ giới thiệu sau đây</li>
+            <li>Sẽ có 5 câu hỏi cho các bạn lựa chọn và trong 5 câu hỏi này sẽ có 1 chữ cái của mật mã</li>
+            <li>Nhiệm vụ của các bạn là trả lời các câu hỏi này để tìm mật mã và nhận thưởng</li>
             <li>Bạn nào trả lời đúng thì sẽ được 2 viên kẹo</li>
             <li>Bạn nào trả lời sai thì không sao, không có bị gì đâu nè :)</li>
-            <li>Bạn nào tìm được mật sẽ được thưởng nóng 5 viên kẹo 😁</li>
+            <li>Bạn nào tìm được mật mã sẽ được thưởng nóng 5 viên kẹo 😁</li>
         </ul>
     </div>
     <RouterLink :to="`/quiz_list`">

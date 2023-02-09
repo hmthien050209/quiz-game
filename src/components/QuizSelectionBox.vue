@@ -36,13 +36,13 @@
             blank
         />
         <LetterBox
-            v-for="(e, i) in currentQuiz.keyword.length"
+            v-for="i in currentQuiz.keyword.length"
             :blank="store.quizLockState[id - 1]"
             :hidden="!store.quizLockState[id - 1] || !store.solvedAll"
             :show-lb="store.quizSolvedState[id - 1] || store.solvedAll"
             :class="`visibleLetterBox${id}`"
-            :is-key-lb="i == currentQuiz.keyIdx - 1"
-        >{{ currentQuiz.keyword.charAt(i) }}</LetterBox>
+            :is-key-lb="i == currentQuiz.keyIdx"
+        >{{ currentQuiz.keyword.charAt(i - 1) }}</LetterBox>
         <LetterBox
             v-for="i in blankLbRightNum"
             blank
