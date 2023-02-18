@@ -18,8 +18,8 @@
 </template>
 <style scoped>
 .solve-button {
-  @apply absolute bottom-[5%] m-2 flex h-16 w-auto items-center justify-center 
-  place-self-center rounded-xl p-2 text-3xl font-medium;
+  @apply absolute bottom-[5%] flex h-16 w-auto items-center justify-center 
+  place-self-center text-3xl font-medium;
 }
 </style>
 <script setup lang="ts">
