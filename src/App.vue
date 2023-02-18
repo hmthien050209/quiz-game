@@ -5,13 +5,15 @@ export default {
   components: { Motion, Presence },
   setup() {
     return {
-      quizes
+      quizes,
     };
   },
 };
 </script>
 <template>
-  <div class="h-screen w-screen overflow-hidden bg-gradient-to-br from-slate-700 to-slate-800 text-white">
+  <div
+    class="h-screen w-screen overflow-hidden bg-gradient-to-br from-slate-700 to-slate-800 text-white"
+  >
     <RouterView v-slot="{ Component, route }">
       <Presence>
         <Motion
@@ -20,7 +22,7 @@ export default {
           :animate="{
             opacity: 1,
             x: 0,
-            transition: { delay: 0.3 }
+            transition: { delay: 0.3 },
           }"
           :exit="{ opacity: 0, x: -100 }"
           :exitBeforeEnter="true"

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref } from 'vue';
+import { ref } from "vue";
 const emit = defineEmits(["solved"]);
 const props = defineProps({
   id: { type: Number, required: true },
@@ -18,12 +18,17 @@ function checkAnswer() {
   <div
     v-if="isCorrectAnswer"
     @click="checkAnswer()"
-    :class="selected || showAnswer ? `selection-box-correct` : `selection-box-normal`"
+    :class="
+      selected || showAnswer ? `selection-box-correct` : `selection-box-normal`
+    "
   >
     <slot>Right answer here!</slot>
     <font-awesome-icon
       icon="fa-solid fa-check-square"
-      :class="[selected || showAnswer ? `scale-100` : `scale-0`, `selection-icon`]"
+      :class="[
+        selected || showAnswer ? `scale-100` : `scale-0`,
+        `selection-icon`,
+      ]"
     ></font-awesome-icon>
   </div>
   <div
@@ -36,32 +41,35 @@ function checkAnswer() {
     <slot> Answers here! </slot>
     <font-awesome-icon
       icon="fa-solid fa-xmark-square"
-      :class="[selected || showAnswer ? `scale-100` : `scale-0`, `selection-icon`]"
+      :class="[
+        selected || showAnswer ? `scale-100` : `scale-0`,
+        `selection-icon`,
+      ]"
     ></font-awesome-icon>
   </div>
 </template>
 
 <style scoped lang="scss">
 %selection-box-shared {
-  @apply h-32 w-4/5 m-2 
-  rounded-lg shadow-lg 
-  transition-all duration-100 ease-linear 
-  text-4xl flex items-center pl-8
-  cursor-pointer;
+  @apply m-2 flex h-32 
+    w-4/5 cursor-pointer 
+    items-center rounded-lg pl-8 
+    text-4xl shadow-lg transition-all duration-100
+    ease-linear;
 }
 .selection-box-normal {
   @extend %selection-box-shared;
-  @apply bg-slate-600 hover:scale-105 hover:shadow-xl;
+  @apply bg-slate-600;
 }
 .selection-box-correct {
   @extend %selection-box-shared;
-  @apply bg-green-500 border-green-700 border-2 scale-105;
+  @apply scale-105 border-2 border-green-700 bg-green-500;
 }
 .selection-box-wrong {
   @extend %selection-box-shared;
-  @apply bg-red-500 border-red-700 border-2 scale-95;
+  @apply scale-95 border-2 border-red-700 bg-red-500;
 }
 .selection-icon {
-  @apply ml-auto m-8;
+  @apply m-8 ml-auto;
 }
 </style>

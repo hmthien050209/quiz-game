@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import AnswerSelectionBox from "../components/AnswerSelectionBox.vue";
-import Button from "../components/Button.vue"
+import Button from "../components/Button.vue";
 import { playConfetti } from "../playConfetti";
 import { quizes } from "../quizes";
 import { useQuizStore } from "../stores/useQuizStore";
@@ -9,7 +9,7 @@ const props = defineProps({
   id: { type: Number, required: true },
 });
 
-const currentQuiz = quizes.find(quiz => quiz.id == props.id)!;
+const currentQuiz = quizes.find((quiz) => quiz.id == props.id)!;
 const store = useQuizStore();
 
 function onSolved() {
@@ -20,7 +20,9 @@ function onSolved() {
 
 <template>
   <div class="quiz-page">
-    <div class="leading-tight text-6xl font-[Oswald] my-4 py-4 flex items-center justify-center text-center">
+    <div
+      class="my-4 flex items-center justify-center py-4 text-center font-[Oswald] text-6xl leading-tight"
+    >
       {{ currentQuiz.question }}
     </div>
     <AnswerSelectionBox
@@ -29,7 +31,8 @@ function onSolved() {
       :is-correct-answer="answer.correct || false"
       :show-answer="store.quizSolvedState[id - 1] || store.solvedAll"
       @solved="onSolved"
-    >{{ answer.answer }}</AnswerSelectionBox>
+      >{{ answer.answer }}</AnswerSelectionBox
+    >
     <RouterLink :to="`/quiz_list`">
       <Button class="absolute top-0 left-0 h-16 w-16">
         <FontAwesomeIcon
@@ -47,8 +50,8 @@ function onSolved() {
   </div>
 </template>
 
-<style scoped >
+<style scoped>
 .quiz-page {
-  @apply relative h-screen w-screen flex flex-col items-center justify-center p-8;
+  @apply relative flex h-screen w-screen flex-col items-center justify-center p-8;
 }
 </style>

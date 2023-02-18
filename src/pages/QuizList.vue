@@ -1,33 +1,45 @@
 <template>
-    <div class="relative flex flex-col items-center justify-center h-screen w-screen">
-        <QuizSelectionBox
-            v-for="quiz in quizes"
-            :id="quiz.id"
-            :key-col-idx="keyColIdx"
-        />
-        <Button
-            v-if="answeredQuizNum >= 2"
-            @click="store.setSolvedAll(); playConfetti()"
-            class="absolute bottom-[5%] place-self-center h-16 w-auto m-2 p-2 flex items-center justify-center text-3xl font-medium rounded-xl"
-        >
-            Giải mật mã
-        </Button>
-    </div>
+  <div class="relative flex h-screen w-screen flex-col items-center justify-center">
+    <QuizSelectionBox
+      v-for="quiz in quizes"
+      :id="quiz.id"
+      :key-col-idx="keyColIdx"
+    />
+    <Button
+      v-if="answeredQuizNum >= 2"
+      @click="
+        showAllAnswers()
+      "
+      class="solve-button"
+    >
+      Giải mật mã
+    </Button>
+  </div>
 </template>
-
+<style scoped>
+.solve-button {
+  @apply absolute bottom-[5%] m-2 flex h-16 w-auto items-center justify-center 
+  place-self-center rounded-xl p-2 text-3xl font-medium;
+}
+</style>
 <script setup lang="ts">
-import { quizes } from '../quizes';
-import QuizSelectionBox from '../components/QuizSelectionBox.vue';
-import { useQuizStore } from '../stores/useQuizStore';
-import { watch, ref } from 'vue';
-import Button from '../components/Button.vue';
-import { playConfetti } from '../playConfetti';
+import { quizes } from "../quizes";
+import QuizSelectionBox from "../components/QuizSelectionBox.vue";
+import { useQuizStore } from "../stores/useQuizStore";
+import { ref, onMounted } from "vue";
+import Button from "../components/Button.vue";
+import { playConfetti } from "../playConfetti";
 const keyColIdx: number = 6;
 let store = useQuizStore();
-let answeredQuizNum = ref(store.quizSolvedState.filter((val) => val === true).length);
-watch(answeredQuizNum, (newNum) => {
-    if (newNum === 5) {
-        playConfetti();
-    }
+let answeredQuizNum = ref(
+  store.quizSolvedState.filter((val) => val === true).length
+);
+
+function showAllAnswers() {
+  store.setSolvedAll();
+  playConfetti();
+}
+onMounted(() => {
+  if (answeredQuizNum.value === 5) playConfetti();
 });
 </script>
