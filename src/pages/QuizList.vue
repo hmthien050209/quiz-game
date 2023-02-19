@@ -1,5 +1,7 @@
 <template>
-  <div class="relative flex h-screen w-screen flex-col items-center justify-center">
+  <div
+    class="relative flex h-screen w-screen flex-col items-center justify-center"
+  >
     <QuizSelectionBox
       v-for="quiz in quizes"
       :id="quiz.id"
@@ -7,9 +9,7 @@
     />
     <Button
       v-if="answeredQuizNum >= 2"
-      @click="
-        showAllAnswers()
-      "
+      @click="showAllAnswers()"
       class="solve-button"
     >
       Giải mật mã
