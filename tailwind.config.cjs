@@ -1,9 +1,14 @@
 /** @type {import('tailwindcss').Config} */
-const colors = require("tailwindcss/colors");
 module.exports = {
   content: ["./index.html", "./src/**/*.{vue,js,ts,jsx,tsx}"],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        backgroundColor: "#c8a888",
+        titleForegroundColor: "#5f1a1f",
+        normalForegroundColor: "#493423",
+      },
+    },
   },
   plugins: [],
 };

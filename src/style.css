@@ -1,5 +1,5 @@
-/* Google Fonts: Bangers, Oswald Regular + Medium */
-@import url("https://fonts.googleapis.com/css2?family=Bangers&family=Oswald:wght@400;500&display=swap");
+/* Google Fonts: Bangers, Oswald Regular + Medium, Roboto Slab Regular + Medium */
+@import url("https://fonts.googleapis.com/css2?family=Bangers&family=Oswald:wght@400;500&family=Roboto+Slab:wght@400;500&display=swap");
 
 @tailwind base;
 @tailwind components;

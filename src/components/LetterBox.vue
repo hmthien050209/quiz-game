@@ -25,15 +25,15 @@
 }
 .lb-hidden {
   @extend %lb-shared;
-  @apply rounded-xl bg-slate-600;
+  @apply rounded-xl border-2 border-titleForegroundColor bg-orange-200;
 }
 .lb-normal {
   @extend %lb-shared;
-  @apply flex items-center justify-center rounded-xl bg-slate-600 text-4xl text-white;
+  @apply flex items-center justify-center rounded-xl border-2 border-titleForegroundColor bg-orange-200 text-4xl text-normalForegroundColor;
 }
 .lb-key {
   @extend .lb-normal;
-  @apply bg-green-600;
+  @apply bg-emerald-500;
 }
 </style>
 

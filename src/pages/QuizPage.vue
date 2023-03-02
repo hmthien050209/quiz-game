@@ -21,7 +21,7 @@ function onSolved() {
 <template>
   <div class="quiz-page">
     <div
-      class="my-4 flex items-center justify-center py-4 text-center font-[Oswald] text-6xl leading-tight"
+      class="my-4 flex items-center justify-center py-4 text-center font-[Oswald] text-6xl leading-tight text-titleForegroundColor"
     >
       {{ currentQuiz.question }}
     </div>
@@ -33,25 +33,27 @@ function onSolved() {
       @solved="onSolved"
       >{{ answer.answer }}</AnswerSelectionBox
     >
-    <RouterLink :to="`/quiz_list`">
-      <Button class="absolute top-0 left-0 h-16 w-16">
-        <FontAwesomeIcon
-          icon="fa-solid fa-arrow-left"
-          size="lg"
-        />
+    <div class="flex h-20 flex-row">
+      <RouterLink :to="`/quiz_list`">
+        <Button class="h-20 w-20">
+          <FontAwesomeIcon
+            icon="fa-solid fa-arrow-left"
+            size="lg"
+          />
+        </Button>
+      </RouterLink>
+      <Button
+        @click="store.setSolved(id)"
+        class="h-full w-full text-3xl"
+      >
+        Hiện đáp án đúng
       </Button>
-    </RouterLink>
-    <Button
-      @click="store.setSolved(id)"
-      class="m-2 p-2 text-3xl font-medium"
-    >
-      Hiện đáp án đúng
-    </Button>
+    </div>
   </div>
 </template>
 
 <style scoped>
 .quiz-page {
-  @apply relative flex h-screen w-screen flex-col items-center justify-center p-8;
+  @apply relative flex h-screen w-screen flex-col items-center justify-center p-16;
 }
 </style>

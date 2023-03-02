@@ -53,21 +53,21 @@ function checkAnswer() {
 %selection-box-shared {
   @apply m-2 flex h-32 
     w-4/5 cursor-pointer 
-    items-center rounded-lg pl-8 
-    text-4xl shadow-lg transition-all duration-100
-    ease-linear;
+    items-center rounded-lg border-2 
+    pl-8 text-4xl shadow-lg transition-all
+    duration-100 ease-linear;
 }
 .selection-box-normal {
   @extend %selection-box-shared;
-  @apply bg-slate-600;
+  @apply border-titleForegroundColor bg-orange-200;
 }
 .selection-box-correct {
   @extend %selection-box-shared;
-  @apply scale-105 border-2 border-green-700 bg-green-500;
+  @apply scale-105 border-emerald-600 bg-emerald-500 text-white;
 }
 .selection-box-wrong {
   @extend %selection-box-shared;
-  @apply scale-95 border-2 border-red-700 bg-red-500;
+  @apply scale-95 border-red-700 bg-red-500 text-white;
 }
 .selection-icon {
   @apply m-8 ml-auto;

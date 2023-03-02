@@ -7,7 +7,7 @@
 .button {
   @apply m-4 flex cursor-pointer items-center
     justify-center rounded-lg 
-    border-2 border-sky-300 bg-slate-900 p-4 text-white 
+    border-2 border-titleForegroundColor bg-orange-200 p-4 text-normalForegroundColor 
     shadow-lg transition-all duration-150 ease-linear;
 }
 </style>

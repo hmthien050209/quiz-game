@@ -11,9 +11,7 @@ export default {
 };
 </script>
 <template>
-  <div
-    class="h-screen w-screen overflow-hidden bg-gradient-to-br from-slate-700 to-slate-800 text-white"
-  >
+  <div class="background">
     <RouterView v-slot="{ Component, route }">
       <Presence>
         <Motion
@@ -33,3 +31,9 @@ export default {
     </RouterView>
   </div>
 </template>
+<style scoped>
+.background {
+  background-image: url("assets/images/background.png");
+  @apply h-screen w-screen overflow-hidden bg-cover bg-no-repeat font-['Roboto_Slab'] font-medium text-normalForegroundColor;
+}
+</style>

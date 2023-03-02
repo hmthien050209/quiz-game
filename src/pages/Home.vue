@@ -7,7 +7,7 @@
     ></audio>
     <div
       tabindex="0"
-      class="h-2 w-2 bg-[#FFF0B5]"
+      class="h-2 w-2 bg-transparent"
       @focusin="playAudio()"
     ></div>
     <Presence>
@@ -35,15 +35,15 @@
 .home {
   width: 100%;
   height: 100%;
-  background-image: url("../assets/images/background.png");
+  background-image: url("../assets/images/greeting-background.png");
   background-repeat: no-repeat;
   background-size: cover;
 }
 .play-button {
   @apply absolute top-[58%] left-[32%] 
     m-4 h-auto w-auto rounded-l-full rounded-r-full
-    bg-gradient-to-b from-yellow-400 via-yellow-500 to-orange-500 
-    p-7 font-[Bangers] text-5xl 
+    bg-gradient-to-b from-yellow-500 via-orange-500 to-orange-600
+    p-7 font-[Bangers] text-5xl text-white
     shadow-md transition-all 
     duration-150 
     ease-linear;

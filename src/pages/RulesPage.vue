@@ -13,7 +13,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="relative h-screen w-screen p-16">
+  <div class="relative h-screen w-screen p-32">
     <h1 class="font-[Oswald] text-7xl font-medium">Luật chơi</h1>
     <ul class="list-disc pt-8 pl-8 text-4xl leading-relaxed">
       <li>
@@ -30,7 +30,7 @@ onMounted(() => {
     </ul>
   </div>
   <RouterLink :to="`/quiz_list`">
-    <Button class="absolute bottom-8 right-8 h-auto w-auto text-3xl">
+    <Button class="absolute bottom-20 left-20 h-auto w-auto text-3xl">
       Đã rõ luật chơi
       <FontAwesomeIcon
         icon="fa-check-square"

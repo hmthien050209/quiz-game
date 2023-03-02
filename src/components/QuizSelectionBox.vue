@@ -1,12 +1,12 @@
 <template>
   <div
-    class="my-2 flex h-20 w-auto flex-row items-center rounded-xl bg-slate-800 px-2"
+    class="my-2 flex h-20 w-auto flex-row items-center rounded-xl bg-[#c8a888] px-2 shadow-md brightness-110"
   >
     <div class="relative h-16 w-16">
-      <span
+      <Button
         @click="pushQuiz()"
         class="id-button"
-        >{{ id }}</span
+        >{{ id }}</Button
       >
       <Presence class="absolute top-0 left-0 h-full w-full">
         <Motion
@@ -61,6 +61,7 @@ import { useRouter } from "vue-router";
 import { quizes } from "../quizes";
 import { useQuizStore } from "../stores/useQuizStore";
 import LetterBox from "./LetterBox.vue";
+import Button from "./Button.vue";
 
 const props = defineProps({
   id: { type: Number, required: true },
@@ -83,9 +84,7 @@ onUpdated(() => {
       `.visibleLetterBox${props.id}`,
       { y: [-24, 0], opacity: [0, 1] },
       { delay: stagger(0.05, { start: 0.1 }) }
-    ).finished.then(() => {
-      pushQuiz();
-    });
+    );
   }
   if (store.solvedAll) {
     animate(
@@ -98,11 +97,10 @@ onUpdated(() => {
 </script>
 <style scoped>
 .id-button {
-  @apply flex
-    h-full w-full cursor-pointer
-    items-center justify-center rounded-xl 
-    bg-slate-600 
-    text-3xl font-medium text-white;
+  @apply m-0
+    flex h-full w-full
+    cursor-pointer items-center justify-center 
+    rounded-xl p-0 text-3xl font-medium text-normalForegroundColor;
 }
 .lock-button {
   @apply flex h-full w-full

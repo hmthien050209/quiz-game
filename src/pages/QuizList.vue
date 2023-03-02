@@ -2,6 +2,14 @@
   <div
     class="relative flex h-screen w-screen flex-col items-center justify-center"
   >
+    <span
+      class="m-2 p-2 font-[Oswald] text-5xl text-titleForegroundColor transition-all duration-300 ease-linear"
+      >{{
+        store.solvedAll || answeredQuizNum === 5
+          ? 'Chúc mừng, mật mã là "Hội An"'
+          : "Mời bạn chọn câu hỏi"
+      }}</span
+    >
     <QuizSelectionBox
       v-for="quiz in quizes"
       :id="quiz.id"
@@ -18,7 +26,7 @@
 </template>
 <style scoped>
 .solve-button {
-  @apply absolute bottom-[5%] flex h-16 w-auto items-center justify-center 
+  @apply flex h-16 w-auto items-center justify-center 
   place-self-center text-3xl font-medium;
 }
 </style>
