@@ -34,7 +34,7 @@ function onSolved() {
       >{{ answer.answer }}</AnswerSelectionBox
     >
     <div class="flex h-20 flex-row">
-      <RouterLink :to="`/quiz_list`">
+      <RouterLink to="/quiz_list">
         <Button class="h-20 w-20">
           <FontAwesomeIcon
             icon="fa-solid fa-arrow-left"

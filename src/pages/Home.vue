@@ -22,7 +22,7 @@
       >
         <RouterLink
           tabindex="1"
-          :to="`/rules`"
+          to="/rules"
           class="play-button"
         >
           Bắt đầu chơi!

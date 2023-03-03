@@ -3,12 +3,17 @@ import Home from "./pages/Home.vue";
 import QuizPage from "./pages/QuizPage.vue";
 import QuizList from "./pages/QuizList.vue";
 import RulesPage from "./pages/RulesPage.vue";
+import RandomWheel from "./pages/RandomWheel.vue";
 
 const routes = [
   { path: "/", component: Home },
   {
     path: "/rules",
     component: RulesPage,
+  },
+  {
+    path: "/random_wheel",
+    component: RandomWheel,
   },
   {
     path: "/quiz_list",

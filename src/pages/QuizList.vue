@@ -15,21 +15,25 @@
       :id="quiz.id"
       :key-col-idx="keyColIdx"
     />
-    <Button
-      v-if="answeredQuizNum >= 2"
-      @click="showAllAnswers()"
-      class="solve-button"
-    >
-      Giải mật mã
-    </Button>
+    <div class="m-2 flex h-auto w-80 flex-col items-center justify-center">
+      <Button
+        v-if="answeredQuizNum >= 2"
+        @click="showAllAnswers()"
+        class="h-full w-full text-3xl"
+      >
+        Giải mật mã
+      </Button>
+      <Button class="h-full w-full text-3xl">
+        <RouterLink
+          to="/random_wheel"
+          class="h-full w-full"
+        >
+          Quay số
+        </RouterLink>
+      </Button>
+    </div>
   </div>
 </template>
-<style scoped>
-.solve-button {
-  @apply flex h-16 w-auto items-center justify-center 
-  place-self-center text-3xl font-medium;
-}
-</style>
 <script setup lang="ts">
 import { quizes } from "../quizes";
 import QuizSelectionBox from "../components/QuizSelectionBox.vue";

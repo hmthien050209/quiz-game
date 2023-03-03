@@ -16,6 +16,7 @@ onMounted(() => {
   <div class="relative h-screen w-screen p-32">
     <h1 class="font-[Oswald] text-7xl font-medium">Luật chơi</h1>
     <ul class="list-disc pt-8 pl-8 text-4xl leading-relaxed">
+      <li>Chúng mình sẽ quay ngẫu nhiên để chọn người sẽ trả lời câu hỏi 🙃</li>
       <li>
         Sẽ có 5 câu hỏi cho các bạn lựa chọn và trong 5 câu hỏi này sẽ có 1 chữ
         cái của mật mã
@@ -25,11 +26,10 @@ onMounted(() => {
         thưởng
       </li>
       <li>Bạn nào trả lời đúng thì sẽ được 2 viên kẹo</li>
-      <li>Bạn nào trả lời sai thì không sao, không có bị gì đâu nè :)</li>
-      <li>Bạn nào tìm được mật mã sẽ được thưởng nóng 5 viên kẹo 😁</li>
+      <li>Bạn nào trả lời sai thì không sao, không có bị gì đâu nè 🙃</li>
     </ul>
   </div>
-  <RouterLink :to="`/quiz_list`">
+  <RouterLink to="/random_wheel">
     <Button class="absolute bottom-20 left-20 h-auto w-auto text-3xl">
       Đã rõ luật chơi
       <FontAwesomeIcon
